@@ -1,0 +1,3 @@
+class InterpretersController < ApplicationController
+
+end
