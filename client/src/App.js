@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Interpreters from './components/Interpreters';
+import InterpreterData from './components/InterpreterData';
 import './App.css';
 
+
 class App extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      interpreters: []
+    }
+  }
+
+  componentDidMount() {
+    InterpreterData.fetchInterpreters().then(interpreters => this.setState({ interpreters }))
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>ScheduTerp</h1>
+        <div className="Interpreters">
+          <Interpreters interpreters={this.state.interpreters} />
+        </div>
       </div>
     );
   }
