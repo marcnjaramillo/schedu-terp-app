@@ -13,6 +13,15 @@ Interpreter.create!([{
   city: "Vancouver",
   state: "WA",
   zip_code: "98683",
-  certification: ["NIC", "Ed:K-12"],
   rate: 45.00
   }])
+
+  Certification.create!([{
+    interpreter_id: 1,
+    name: "NIC"
+  }])
+
+  Certification.create!([{
+    interpreter_id: 1,
+    name: "Ed:K-12"
+    }])
