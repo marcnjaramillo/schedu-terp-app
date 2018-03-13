@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Interpreter.create!([{
+interpreters = Interpreter.create!([{
   first_name: "Marc",
   last_name: "Jaramillo",
-  street_address: "14000 Cascade Park Dr Apt 114",
+  street_address: "14000 SE Cascade Park Dr Apt 114",
   city: "Vancouver",
   state: "WA",
   zip_code: "98683",
@@ -18,7 +18,7 @@ Interpreter.create!([{
 
   Certification.create!([{
     interpreter_id: 1,
-    name: "NIC"
+    name: "NIC",
   }])
 
   Certification.create!([{
