@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180311200903) do
+ActiveRecord::Schema.define(version: 20180313020713) do
 
   create_table "certifications", force: :cascade do |t|
     t.integer "interpreter_id"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20180311200903) do
     t.string "city"
     t.string "state"
     t.string "zip_code"
-    t.decimal "rate"
+    t.float "rate"
   end
 
 end
