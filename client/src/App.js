@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Interpreters from './components/Interpreters';
 import InterpreterData from './components/InterpreterData';
+import Jobs from './components/Jobs';
+import JobData from './components/JobData';
 import './App.css';
 
 
@@ -9,7 +11,8 @@ class App extends Component {
     super()
 
     this.state = {
-      interpreters: []
+      interpreters: [],
+      jobs: []
     }
   }
 
@@ -23,6 +26,9 @@ class App extends Component {
         <h1>ScheduTerp</h1>
         <div className="Interpreters">
           <Interpreters interpreters={this.state.interpreters} />
+        </div>
+        <div className="Jobs">
+          <Jobs jobs={this.state.jobs} />
         </div>
       </div>
     );
