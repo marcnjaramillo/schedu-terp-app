@@ -18,6 +18,7 @@ class App extends Component {
 
   componentDidMount() {
     InterpreterData.fetchInterpreters().then(interpreters => this.setState({ interpreters }))
+    JobData.fetchJobs().then(jobs => this.setState({ jobs }))
   }
 
   render() {
