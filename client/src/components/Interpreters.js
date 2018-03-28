@@ -15,6 +15,7 @@ const Interpreters = ({ interpreters }) => {
 
   return (
     <div>
+      <h1>Interpreters</h1>
       {renderInterpreters}
     </div>
   )
