@@ -25,3 +25,17 @@ interpreters = Interpreter.create!([{
     interpreter_id: 1,
     name: "Ed:K-12"
     }])
+
+jobs = Job.create!([{
+   location: "Whovian Hospital",
+   street_address: "123 Tardis Way",
+   city: "Gallifrey",
+   state: "UK",
+   zip_code: "91011",
+   contact_person: "Doctor",
+   contact_number: "555-555-5555",
+   nature: "Time travel",
+   duration: 2,
+   client: "River Song",
+   notes: "Spoilers"
+  }])
