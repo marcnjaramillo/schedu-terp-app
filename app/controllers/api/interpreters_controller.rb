@@ -46,7 +46,10 @@ class Api::InterpretersController < ApplicationController
         :first_name,
         :last_name,
         :street_address,
-        :city, :state, :zip_code, certifications_attributes: [:name],
+        :city,
+        :state,
+        :zip_code,
+        certifications_attributes: [:name],
         :rate
       )
     end
