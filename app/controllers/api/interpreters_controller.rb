@@ -33,6 +33,7 @@ class Api::InterpretersController < ApplicationController
       render json: { message: "Successfully deleted interpreter." }, status: 204
     else
       render json: { message: "Unable to delete interpreter." }, status: 400
+    end
   end
 
   private
@@ -49,8 +50,8 @@ class Api::InterpretersController < ApplicationController
         :city,
         :state,
         :zip_code,
-        certifications_attributes: [:name],
-        :rate
+        :rate,
+        certifications_attributes: [:name]
       )
     end
 end

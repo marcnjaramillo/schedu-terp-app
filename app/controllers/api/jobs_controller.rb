@@ -33,6 +33,7 @@ before_action :set_job
       render json: { message: "Successfully deleted job." }, status: 204
     else
       render json: { message: "Unable to delete job." }, status: 400
+    end
   end
 
   private
