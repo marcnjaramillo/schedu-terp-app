@@ -16,16 +16,6 @@ interpreters = Interpreter.create!([{
   rate: 45.00
   }])
 
-  Certification.create!([{
-    interpreter_id: 1,
-    name: "NIC",
-  }])
-
-  Certification.create!([{
-    interpreter_id: 1,
-    name: "Ed:K-12"
-    }])
-
 jobs = Job.create!([{
    location: "Whovian Hospital",
    street_address: "123 Tardis Way",
