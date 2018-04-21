@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getInterpreters } from '../actions/interpreters';
 
 import InterpreterPanel from '../components/InterpreterPanel';
-
+import InterpreterForm from './InterpreterForm';
 
 
 class Interpreters extends Component {
@@ -17,7 +17,7 @@ class Interpreters extends Component {
       <div className="InterpretersContainer">
         <h1>Interpreters</h1>
         {this.props.interpreters.map(interpreter => <InterpreterPanel key={interpreter.id} interpreter={interpreter} />)}
-
+        <InterpreterForm/>
       </div>
 
     );
