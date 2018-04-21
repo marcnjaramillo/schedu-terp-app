@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import Interpreters from './components/Interpreters';
-import InterpreterData from './components/InterpreterData';
-import Jobs from './components/Jobs';
-import JobData from './components/JobData';
+import Interpreters from './Interpreters';
+import InterpreterData from '../components/InterpreterData';
+import Jobs from './Jobs';
+import JobData from '../components/JobData';
 import './App.css';
 
 
 class App extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       interpreters: [],
