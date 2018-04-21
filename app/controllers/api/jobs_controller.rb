@@ -3,8 +3,7 @@ class Api::JobsController < ApplicationController
 before_action :set_job
 
   def index
-    @jobs = Job.all
-    render json: @jobs
+    render json: Job.all
   end
 
   def create

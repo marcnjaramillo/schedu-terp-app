@@ -3,8 +3,7 @@ class Api::InterpretersController < ApplicationController
   before_action :set_interpreter
 
   def index
-    @interpreters = Interpreter.all
-    render json: @interpreters
+    render json: Interpreter.all
   end
 
   def create
