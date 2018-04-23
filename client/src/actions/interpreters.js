@@ -1,3 +1,5 @@
+import { resetInterpreterForm } from './interpreterForm';
+
 const API_URL = process.env.REACT_APP_API_URL;
 
 const setInterpreters = interpreters => {
@@ -7,11 +9,36 @@ const setInterpreters = interpreters => {
   }
 }
 
+const addInterpreter = interpreter => {
+  return {
+    type: 'CREATE_INTERPRETER_SUCCESS',
+    interpreter
+  }
+}
+
 export const getInterpreters = () => {
   return dispatch => {
     return fetch(`${API_URL}/interpreters`)
       .then(response => response.json())
       .then(interpreters => dispatch(setInterpreters(interpreters)))
       .catch(error => console.log(error));
+  }
+}
+
+export const createInterpreter = interpreter => {
+  return dispatch => {
+    return fetch(`${API_URL}/interpreters`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ interpreter: interpreter })
+    })
+      .then(response => response.json())
+      .then(interpreter => {
+        dispatch(addInterpreter(interpreter))
+        dispatch(resetInterpreterForm())
+      })
+      .catch(error => console.log(error))
   }
 }
