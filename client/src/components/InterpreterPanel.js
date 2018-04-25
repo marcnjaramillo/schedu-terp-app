@@ -1,10 +1,8 @@
 import React from 'react';
 
 const InterpreterPanel = ({ interpreter }) => (
-  <div>
+  <div className="InterpreterPanel">
     <p>{interpreter.first_name + ' ' + interpreter.last_name}</p>
-    <p>{interpreter.street_address}</p>
-    <p>{interpreter.city + ', ' + interpreter.state + ' ' + interpreter.zip_code}</p>
   </div>
 )
 

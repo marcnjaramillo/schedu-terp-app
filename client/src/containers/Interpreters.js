@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getInterpreters } from '../actions/interpreters';
 
 import InterpreterPanel from '../components/InterpreterPanel';
 import InterpreterForm from './InterpreterForm';
+import { getInterpreters } from '../actions/interpreters';
+import './Interpreters.css';
 
 
 class Interpreters extends Component {
