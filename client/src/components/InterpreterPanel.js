@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const InterpreterPanel = ({ interpreter }) => (
-  <div className="InterpreterPanel">
-    <p>{interpreter.first_name + ' ' + interpreter.last_name}</p>
-  </div>
+const InterpreterPanel = ({ match, interpreter }) => (
+  <Link key={interpreter.id} to={`${match.url}/${interpreter.id}`}>
+    <div className="InterpreterPanel">
+      <p>{interpreter.first_name + ' ' + interpreter.last_name}</p>
+    </div>
+  </Link>
 )
 
 export default InterpreterPanel;
