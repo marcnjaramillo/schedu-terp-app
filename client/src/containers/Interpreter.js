@@ -14,7 +14,7 @@ const Interpreter = ({ interpreter }) => {
 
 const mapStateToProps = (state, ownProps) => {
 
-  const interpreter = state.interpreters.find(interpreter => interpreter.id === ownProps.match.params.interpreterId)
+  const interpreter = state.interpreters.find(interpreter => interpreter.id === parseInt(ownProps.match.params.interpreterId))
 
   if (interpreter) {
     return { interpreter }
