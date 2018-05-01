@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import InterpreterPanel from '../components/InterpreterPanel';
 import InterpreterForm from './InterpreterForm';
-import Interpreter from '../components/Interpreter';
+import Interpreter from './Interpreter';
 import { getInterpreters } from '../actions/interpreters';
 import './Interpreters.css';
 
