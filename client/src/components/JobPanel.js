@@ -1,17 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const JobPanel = ({ job }) => (
-  <div>
-    <p>{job.location}</p>
-    <p>{job.street_address}</p>
-    <p>{job.city + ', ' + job.state + ' ' + job.zip_code}</p>
-    <p>{job.contact_person}</p>
-    <p>{job.contact_number}</p>
-    <p>{job.nature}</p>
-    <p>{job.duration}</p>
-    <p>{job.client}</p>
-    <p>{job.notes}</p>
-  </div>
+const JobPanel = ({ match, job }) => (
+  <Link key={job.id} to={`${match.url}/${job.id}`}>
+    <div className="JobPanel">
+      <p>{job.location}</p>
+    </div>
+  </Link>
 );
 
 export default JobPanel;
