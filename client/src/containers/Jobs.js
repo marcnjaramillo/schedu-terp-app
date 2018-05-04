@@ -26,7 +26,7 @@ class Jobs extends Component {
           <Route exact path={`${match.url}`} render={() => (
             <div className="JobsContainer">
               <h1>Jobs</h1>
-              {jobs.map(job => <JobPanel key={job.id} job={job} />)}
+              {jobs.map(job => <JobPanel key={job.id} match={match} job={job} />)}
             </div>
           )} />
         </Switch>
