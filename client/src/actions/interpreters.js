@@ -16,6 +16,13 @@ const addInterpreter = interpreter => {
   }
 }
 
+const deleteInterpreter = id => {
+  return {
+    type: 'DELETE_INTERPRETER_SUCCESS',
+    id: id
+  }
+}
+
 export const getInterpreters = () => {
   return dispatch => {
     return fetch(`${API_URL}/interpreters`)
@@ -38,6 +45,18 @@ export const createInterpreter = interpreter => {
       .then(interpreter => {
         dispatch(addInterpreter(interpreter))
         dispatch(resetInterpreterForm())
+      })
+      .catch(error => console.log(error))
+  }
+}
+
+export const removeInterpreter = interpreter => {
+  return dispatch => {
+    return fetch(`${API_URL}/interpreters/${interpreter.id}`, {
+      method: "DELETE"
+    })
+      .then(interpreter => {
+        dispatch(deleteInterpreter())
       })
       .catch(error => console.log(error))
   }

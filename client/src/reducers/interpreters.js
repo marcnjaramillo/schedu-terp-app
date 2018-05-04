@@ -6,6 +6,10 @@ export default (state = [], action) => {
     case 'CREATE_INTERPRETER_SUCCESS':
       return state.concat(action.interpreter);
 
+    case 'DELETE_INTERPRETER_SUCCESS':
+      const interpreterId = action.data;
+      return  state.filter(interpreter => interpreter.id !== interpreterId);
+
     default:
       return state;
   }
