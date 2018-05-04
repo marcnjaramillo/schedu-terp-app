@@ -42,7 +42,7 @@ before_action :set_job
     end
 
     def job_params
-      params.require(:interpreter).permit(
+      params.require(:job).permit(
         :location,
         :street_address,
         :city,
