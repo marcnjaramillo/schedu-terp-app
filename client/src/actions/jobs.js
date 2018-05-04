@@ -16,6 +16,13 @@ const addJob = job => {
   }
 }
 
+const deleteJob = id => {
+  return {
+    type: 'DELETE_JOB_SUCCESS',
+    id: id
+  }
+}
+
 export const getJobs = () => {
   return dispatch => {
     return fetch(`${API_URL}/jobs`)
@@ -38,6 +45,18 @@ export const createJob = job => {
       .then(job => {
         dispatch(addJob(job))
         dispatch(resetJobForm())
+      })
+      .catch(error => console.log(error))
+  }
+}
+
+export const removeJob = job => {
+  return dispatch => {
+    return fetch(`${API_URL}/jobs/${job.id}`, {
+      method: "DELETE"
+    })
+      .then(job => {
+        dispatch(deleteJob())
       })
       .catch(error => console.log(error))
   }

@@ -6,6 +6,10 @@ export default (state = [], action) => {
     case 'CREATE_JOB_SUCCESS':
       return state.concat(action.job);
 
+    case 'DELETE_JOB_SUCCESS':
+      const jobId = action.data;
+      return  state.filter(job => job.id !== jobId);
+
     default:
       return state;
   }
