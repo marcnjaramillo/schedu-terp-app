@@ -1,6 +1,6 @@
 export const updateJobFormData = jobFormData => {
   return {
-    type: 'UPDATED_DATA',
+    type: 'UPDATED_JOB_DATA',
     jobFormData
   }
 }

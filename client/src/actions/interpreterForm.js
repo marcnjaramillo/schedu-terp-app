@@ -1,6 +1,6 @@
 export const updateInterpreterFormData = interpreterFormData => {
   return {
-    type: 'UPDATED_DATA',
+    type: 'UPDATED_INTERPRETER_DATA',
     interpreterFormData
   }
 }
