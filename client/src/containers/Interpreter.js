@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeInterpreter } from '../actions/interpreters';
+import InterpreterDetails from '../components/InterpreterDetails';
 
 class Interpreter extends Component {
 
@@ -14,9 +15,7 @@ class Interpreter extends Component {
 
     return (
       <div>
-        <h3>{interpreter.first_name + ' ' + interpreter.last_name}</h3>
-        <p>Address: {interpreter.street_address}</p>
-        <p>{interpreter.city + ', ' + interpreter.state + ' ' + interpreter.zip_code}</p>
+        <InterpreterDetails key={interpreter.id} interpreter={interpreter} />
         <button onClick={() => this.handleOnClick(interpreter)}>Delete</button>
       </div>
     );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeJob } from '../actions/jobs';
+import JobDetails from '../components/JobDetails';
 
 class Job extends Component {
 
@@ -15,15 +16,7 @@ class Job extends Component {
 
     return (
       <div>
-        <p>{job.location}</p>
-        <p>{job.street_address}</p>
-        <p>{job.city + ', ' + job.state + ' ' + job.zip_code}</p>
-        <p>{job.contact_person}</p>
-        <p>{job.contact_number}</p>
-        <p>{job.nature}</p>
-        <p>{job.duration}</p>
-        <p>{job.client}</p>
-        <p>{job.notes}</p>
+        <JobDetails key={job.id} job={job} />
         <button onClick={() => this.handleOnClick(job)}>Delete</button>
       </div>
     );
