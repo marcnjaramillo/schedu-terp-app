@@ -16,7 +16,7 @@ class JobForm extends Component {
   handleOnSubmit = event => {
     event.preventDefault()
     this.props.createJob(this.props.jobFormData)
-    window.location = '/interpreters'
+    window.location = '/jobs'
   }
 
   render () {
