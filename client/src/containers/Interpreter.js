@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { removeInterpreter } from '../actions/interpreters';
 
-const Interpreter = ({ interpreter }) => {
+class Interpreter extends Component {
 
-  return (
-    <div>
-      <h3>{interpreter.first_name + ' ' + interpreter.last_name}</h3>
-      <p>Address: {interpreter.street_address}</p>
-      <p>{interpreter.city + ', ' + interpreter.state + ' ' + interpreter.zip_code}</p>
-    </div>
-  );
+  handleOnClick = interpreter => {
+    this.props.removeInterpreter(interpreter)
+    window.location = '/interpreters'
+  }
+
+  render () {
+    const { interpreter } = this.props;
+
+    return (
+      <div>
+        <h3>{interpreter.first_name + ' ' + interpreter.last_name}</h3>
+        <p>Address: {interpreter.street_address}</p>
+        <p>{interpreter.city + ', ' + interpreter.state + ' ' + interpreter.zip_code}</p>
+        <button onClick={() => this.handleOnClick(interpreter)}>Delete</button>
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -23,4 +34,4 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps)(Interpreter);
+export default connect(mapStateToProps, { removeInterpreter })(Interpreter);
