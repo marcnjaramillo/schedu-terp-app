@@ -16,6 +16,7 @@ class InterpreterForm extends Component {
   handleOnSubmit = event => {
     event.preventDefault()
     this.props.createInterpreter(this.props.interpreterFormData)
+    window.location = '/interpreters'
   }
 
   render () {
