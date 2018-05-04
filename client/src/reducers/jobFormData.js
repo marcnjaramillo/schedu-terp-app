@@ -14,7 +14,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch(action.type) {
-    case 'UPDATED_DATA':
+    case 'UPDATED_JOB_DATA':
       return action.jobFormData;
 
     case 'RESET_JOB_FORM':
