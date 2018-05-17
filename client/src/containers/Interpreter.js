@@ -5,7 +5,7 @@ import InterpreterDetails from '../components/InterpreterDetails';
 
 class Interpreter extends Component {
 
-  handleOnClick = interpreter => {
+  deleteOnClick = interpreter => {
     this.props.removeInterpreter(interpreter)
     window.location = '/interpreters'
   }
@@ -16,7 +16,7 @@ class Interpreter extends Component {
     return (
       <div>
         <InterpreterDetails key={interpreter.id} interpreter={interpreter} />
-        <button onClick={() => this.handleOnClick(interpreter)}>Delete</button>
+        <button onClick={() => this.deleteOnClick(interpreter)}>Delete</button>
       </div>
     );
   }
