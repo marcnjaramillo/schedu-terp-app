@@ -9,10 +9,10 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch(action.type) {
-    case 'UPDATED_INTERPRETER_DATA':
-      return action.interpreterFormData;
+    case 'UPDATED_USER_DATA':
+      return action.userFormData;
 
-    case 'RESET_INTERPRETER_FORM':
+    case 'RESET_USER_FORM':
       return initialState;
 
     default:

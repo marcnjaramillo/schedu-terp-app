@@ -4,15 +4,15 @@ import {
   combineReducers
 } from 'redux';
 import thunk from 'redux-thunk';
-import interpreters from './reducers/interpreters';
-import interpreterFormData from './reducers/interpreterFormData';
+import users from './reducers/users';
+import userFormData from './reducers/userFormData';
 import jobs from './reducers/jobs';
 import jobFormData from './reducers/jobFormData';
 
 
 const reducers = combineReducers({
-  interpreters,
-  interpreterFormData,
+  users,
+  userFormData,
   jobs,
   jobFormData
 });

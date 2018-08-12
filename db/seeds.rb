@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-interpreters = Interpreter.create!([{
+users = User.create!([{
   first_name: "Marc",
   last_name: "Jaramillo",
   street_address: "14000 SE Cascade Park Dr Apt 114",
