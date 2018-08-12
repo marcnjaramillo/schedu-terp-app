@@ -18,7 +18,7 @@ class App extends Component {
           <div className="Navbar">
             <Link to="/">Home</Link>
             <Link to="/users">Users</Link>
-            <Link to="/users/new">Add An User</Link>
+            <Link to="/users/new">Add A User</Link>
             <Link to="/jobs">Jobs</Link>
             <Link to="/jobs/new">Add A Job</Link>
           </div>
