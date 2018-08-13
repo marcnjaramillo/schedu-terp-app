@@ -4,6 +4,18 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
 import Home from '../components/Home';
 import Users from './Users';
 import Jobs from './Jobs';
@@ -11,19 +23,62 @@ import './App.css';
 
 class App extends Component {
 
-  render() {
-    return (
+constructor(props) {
+  super(props);
+
+  this.toggle = this.toggle.bind(this);
+  this.state = {
+    isOpen: false
+  };
+}
+
+toggle() {
+  this.setState({
+    isOpen: !this.state.isOpen
+  });
+}
+
+render() {
+  return (
       <Router>
         <div className="App">
-          <div className="Navbar">
-            <Link to="/">Home</Link>
-            <Link to="/users">Users</Link>
-            <Link to="/users/new">Add A User</Link>
-            <Link to="/jobs">Jobs</Link>
-            <Link to="/jobs/new">Add A Job</Link>
-          </div>
-
-          <hr />
+          <Navbar color="dark" dark expand="lg">
+            <NavbarBrand href="/">ScheduTerp</NavbarBrand>
+            <NavbarToggler onClick={this.toggle} />
+              <Collapse isOpen={this.state.isOpen} navbar>
+                <Nav className="ml-auto mr-4" navbar>
+                  <NavItem>
+                    <NavLink tag={Link} to="/">Home</NavLink>
+                  </NavItem>
+                <UncontrolledDropdown nav inNavbar>
+                  <DropdownToggle nav caret>
+                    Users
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem>
+                      <NavLink tag={Link} to="/users">Users</NavLink>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <NavLink tag={Link} to="/users/new">Add A User</NavLink>
+                    </DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
+                <UncontrolledDropdown nav inNavbar>
+                  <DropdownToggle nav caret>
+                    Assignments
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem>
+                      <NavLink tag={Link} to="/jobs">Jobs</NavLink>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <NavLink tag={Link} to="/jobs/new">Add A Job</NavLink>
+                    </DropdownItem>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
+                </Nav>
+              </Collapse>
+          </Navbar>
 
           <Route exact path="/" component={Home} />
           <Route path="/users" component={Users} />
